@@ -9,7 +9,7 @@ pipeline {
         git url: 'ssh:git@gitee.com:maycur-backend/maycur-id-service.git'
       }
     }
-    state('Sonar Scan') {
+    stage('Sonar Scan') {
       withSonarQuteEnv('sonarqube') {
         sh "${scannerHome}/bin/sonar-scanner  -Dsonar.projectKey=CRB"
       }
