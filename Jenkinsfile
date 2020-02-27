@@ -10,8 +10,10 @@ pipeline {
       }
     }
     stage('Sonar Scan') {
-      withSonarQuteEnv('sonarqube') {
-        sh "${scannerHome}/bin/sonar-scanner  -Dsonar.projectKey=CRB"
+      steps {
+        withSonarQuteEnv('sonarqube') {
+          sh "${scannerHome}/bin/sonar-scanner  -Dsonar.projectKey=CRB"
+        }
       }
     }
   }
