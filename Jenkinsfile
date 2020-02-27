@@ -10,7 +10,7 @@ pipeline {
     }
     state('Sonar Scan') {
       withSonarQuteEnv('sonarqube') {
-        sh "${scannerHome}/bin/sonar-scanner  -Dsonar.projectKey=CRB}
+        sh "${scannerHome}/bin/sonar-scanner  -Dsonar.projectKey=CRB"
       }
     }
   }
