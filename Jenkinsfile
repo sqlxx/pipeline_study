@@ -1,9 +1,16 @@
 pipeline {
-  agent { docker 'python:3.7.6'}
+  environment {
+    sannerHome = tool 'SonarQubeScanner'
+  }
   stages {
-    stage('build') {
+    stage('SCM') {
       steps {
-        sh 'python --version'
+        git url: 'ssh:git@gitee.com:maycur-backend/maycur-id-service.git'
+      }
+    }
+    state('Sonar Scan') {
+      withSonarQuteEnv('sonarqube') {
+        sh "${scannerHome}/bin/sonar-scanner  -Dsonar.projectKey=CRB}
       }
     }
   }
