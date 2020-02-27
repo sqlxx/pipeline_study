@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Sonar Scan') {
       steps {
-        withSonarQubeEnv('sonarqube') {
+        withSonarQubeEnv('sonar') {
           sh "${scannerHome}/bin/sonar-scanner  -Dsonar.projectKey=CRB"
         }
       }
