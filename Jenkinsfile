@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('SCM') {
       steps {
-        git branch:'master', url: 'git@gitee.com:maycur-backend/maycur-id-service.git', credentialsId:'github'
+        git branch:'master', url: 'git@gitee.com:maycur_doa/devops_platform.git', credentialsId:'github'
       }
     }
     stage('Sonar Scan') {
